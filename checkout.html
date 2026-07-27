@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Complete your DohaLearn online tuition enrolment and select a secure QAR payment method.">
+  <title>Secure Checkout | DohaLearn Qatar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top site-navbar inner-nav" aria-label="Primary navigation">
+  <div class="container">
+    <a class="navbar-brand" href="index.html" aria-label="DohaLearn home">
+      <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
+      <span>DohaLearn</span>
+    </a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation menu">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mx-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#demo-videos">Demo Classes</a></li>
+        <li class="nav-item"><a class="nav-link active" href="checkout.html">Fees & Payment</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <span class="currency-badge"><i class="fa-solid fa-coins"></i> QAR</span>
+        <a href="index.html#book-demo" class="btn btn-primary-custom btn-sm">Book Free Demo</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <a class="navbar-brand" href="index.html" id="mobileMenuLabel">
+      <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
+      <span>DohaLearn</span>
+    </a>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body d-flex flex-column">
+    <nav class="mb-4">
+      <a class="mobile-nav-link" href="index.html">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="mobile-nav-link" href="courses.html">Courses <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="mobile-nav-link" href="index.html#demo-videos">Demo Classes <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="mobile-nav-link" href="checkout.html">Fees & Payment <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="mobile-nav-link" href="index.html#reviews">Success Stories <i class="fa-solid fa-arrow-right"></i></a>
+      <a class="mobile-nav-link" href="index.html#faq">FAQ <i class="fa-solid fa-arrow-right"></i></a>
+    </nav>
+    <div class="mt-auto">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <span class="text-secondary small">Base currency</span>
+        <span class="currency-badge"><i class="fa-solid fa-coins"></i> QAR</span>
+      </div>
+      <a href="index.html#book-demo" class="btn btn-primary-custom w-100">Book a Free Demo</a>
+    </div>
+  </div>
+</div>
+
+<main class="page-shell checkout-layout checkout-page">
+  <section class="checkout-hero">
+    <div class="container">
+      <div class="checkout-hero-inner">
+        <div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb checkout-breadcrumb mb-3">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="courses.html">Courses</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Checkout</li>
+            </ol>
+          </nav>
+          <span class="eyebrow mb-2">Secure enrolment</span>
+          <h1>Complete your booking.</h1>
+          <p>Confirm the selected class, add student details and choose your preferred QAR payment method.</p>
+        </div>
+
+        <div class="checkout-stepper" aria-label="Checkout progress">
+          <div class="checkout-step complete">
+            <span class="checkout-step-icon"><i class="fa-solid fa-check"></i></span>
+            <span><small>Step 1</small>Course</span>
+          </div>
+          <span class="checkout-step-line complete"></span>
+          <div class="checkout-step active">
+            <span class="checkout-step-icon">2</span>
+            <span><small>Step 2</small>Checkout</span>
+          </div>
+          <span class="checkout-step-line"></span>
+          <div class="checkout-step">
+            <span class="checkout-step-icon">3</span>
+            <span><small>Step 3</small>Success</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="checkout-content">
+    <div class="container">
+      <div class="checkout-trust-strip" data-aos="fade-up">
+        <span><i class="fa-solid fa-lock"></i> Secure checkout</span>
+        <span><i class="fa-solid fa-rotate-left"></i> Clear cancellation policy</span>
+        <span><i class="fa-brands fa-whatsapp"></i> Qatar-based parent support</span>
+      </div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="row g-4 g-xl-5 align-items-start">
+          <div class="col-lg-7 col-xl-8 order-2 order-lg-1">
+            <section class="checkout-panel" data-aos="fade-up">
+              <div class="checkout-panel-head">
+                <span class="checkout-panel-number">1</span>
+                <div>
+                  <p>Student details</p>
+                  <h2>Who is joining the class?</h2>
+                </div>
+              </div>
+
+              <div class="row g-3 g-md-4">
+                <div class="col-md-6">
+                  <label class="form-label" for="studentName">Student full name</label>
+                  <div class="field-wrap">
+                    <i class="fa-regular fa-user"></i>
+                    <input id="studentName" class="form-control" autocomplete="name" placeholder="Enter full name" required>
+                  </div>
+                  <div class="invalid-feedback">Enter the student name.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="studentGrade">Grade / year</label>
+                  <div class="field-wrap">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <input id="studentGrade" class="form-control" placeholder="e.g. Grade 10" required>
+                  </div>
+                  <div class="invalid-feedback">Enter the current grade.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="parentName">Parent / guardian name</label>
+                  <div class="field-wrap">
+                    <i class="fa-regular fa-id-card"></i>
+                    <input id="parentName" class="form-control" autocomplete="name" placeholder="Enter full name" required>
+                  </div>
+                  <div class="invalid-feedback">Enter the parent or guardian name.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label" for="parentPhone">WhatsApp number</label>
+                  <div class="qatar-phone-field">
+                    <span><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"> +974</span>
+                    <input id="parentPhone" class="form-control" inputmode="numeric" autocomplete="tel" maxlength="8" pattern="[0-9]{8}" placeholder="50001234" required>
+                  </div>
+                  <div class="invalid-feedback">Enter an 8-digit Qatar number.</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label" for="parentEmail">Email address</label>
+                  <div class="field-wrap">
+                    <i class="fa-regular fa-envelope"></i>
+                    <input id="parentEmail" class="form-control" type="email" autocomplete="email" placeholder="parent@example.com" required>
+                  </div>
+                  <div class="invalid-feedback">Enter a valid email address.</div>
+                  <p class="field-help">Your receipt and class onboarding instructions will be sent here.</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="checkout-panel mt-4" data-aos="fade-up" data-aos-delay="80">
+              <div class="checkout-panel-head">
+                <span class="checkout-panel-number">2</span>
+                <div>
+                  <p>Payment method</p>
+                  <h2>How would you like to pay?</h2>
+                </div>
+              </div>
+
+              <div class="payment-method-grid">
+                <label class="payment-choice active">
+                  <input type="radio" name="paymentMethod" value="Credit / Debit Card" checked>
+                  <span class="payment-choice-icon"><i class="fa-regular fa-credit-card"></i></span>
+                  <span class="payment-choice-copy">
+                    <strong>Card</strong>
+                    <small>Visa or Mastercard</small>
+                  </span>
+                  <span class="payment-choice-check"><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="payment-choice">
+                  <input type="radio" name="paymentMethod" value="Apple Pay">
+                  <span class="payment-choice-icon apple-pay-icon"><i class="fa-brands fa-apple-pay"></i></span>
+                  <span class="payment-choice-copy">
+                    <strong>Apple Pay</strong>
+                    <small>Fast device checkout</small>
+                  </span>
+                  <span class="payment-choice-check"><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="payment-choice">
+                  <input type="radio" name="paymentMethod" value="SkipCash">
+                  <span class="payment-choice-icon"><i class="fa-solid fa-wallet"></i></span>
+                  <span class="payment-choice-copy">
+                    <strong>SkipCash</strong>
+                    <small>Qatar gateway</small>
+                  </span>
+                  <span class="payment-choice-check"><i class="fa-solid fa-check"></i></span>
+                </label>
+
+                <label class="payment-choice">
+                  <input type="radio" name="paymentMethod" value="MyFatoorah">
+                  <span class="payment-choice-icon"><i class="fa-solid fa-receipt"></i></span>
+                  <span class="payment-choice-copy">
+                    <strong>MyFatoorah</strong>
+                    <small>Regional gateway</small>
+                  </span>
+                  <span class="payment-choice-check"><i class="fa-solid fa-check"></i></span>
+                </label>
+              </div>
+
+              <div id="cardFields" class="card-details-box">
+                <div class="card-details-heading">
+                  <div>
+                    <span>Card information</span>
+                    <small>Use the demo card details shown below.</small>
+                  </div>
+                  <div class="accepted-cards" aria-label="Accepted card types">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                  </div>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label" for="cardNumber">Card number</label>
+                    <div class="field-wrap card-number-wrap">
+                      <i class="fa-regular fa-credit-card"></i>
+                      <input id="cardNumber" class="form-control" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="4242 4242 4242 4242" pattern="[0-9 ]{15,19}" required>
+                      <span class="field-status"><i class="fa-solid fa-lock"></i></span>
+                    </div>
+                    <div class="invalid-feedback">Enter a valid card number.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label" for="expiry">Expiry date</label>
+                    <div class="field-wrap">
+                      <i class="fa-regular fa-calendar"></i>
+                      <input id="expiry" class="form-control" inputmode="numeric" autocomplete="cc-exp" maxlength="5" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])/[0-9]{2}" required>
+                    </div>
+                    <div class="invalid-feedback">Use MM/YY format.</div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label" for="cvv">Security code</label>
+                    <div class="field-wrap">
+                      <i class="fa-solid fa-shield-halved"></i>
+                      <input id="cvv" class="form-control" inputmode="numeric" autocomplete="cc-csc" maxlength="4" placeholder="123" pattern="[0-9]{3,4}" required>
+                      <span class="field-hint" title="The 3 or 4 digit code on your card">CVV</span>
+                    </div>
+                    <div class="invalid-feedback">Enter the 3 or 4 digit security code.</div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="gatewayMessage" class="gateway-message d-none" aria-live="polite">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <div>
+                  <strong>Gateway redirection</strong>
+                  <p>You will be redirected securely to the selected payment provider after confirming the booking.</p>
+                </div>
+              </div>
+
+              <label class="checkout-consent mt-4">
+                <input id="termsConsent" type="checkbox" required>
+                <span>I agree to the tuition terms, attendance policy and cancellation policy.</span>
+              </label>
+              <div class="invalid-feedback terms-feedback">Please accept the terms before continuing.</div>
+
+              <div class="secure-note checkout-secure-note mt-4">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                  <strong>Protected checkout</strong>
+                  <p>This demonstration does not charge a real card. A live website must use a PCI-compliant payment gateway and secure server-side verification.</p>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <aside class="col-lg-5 col-xl-4 order-1 order-lg-2" data-aos="fade-left">
+            <div class="checkout-summary-card">
+              <div class="summary-card-top">
+                <div>
+                  <span>Order summary</span>
+                  <h2>Your selected class</h2>
+                </div>
+                <span class="summary-secure-badge"><i class="fa-solid fa-lock"></i> Secure</span>
+              </div>
+
+              <div class="summary-course-card">
+                <img id="summaryImage" src="" alt="Selected course">
+                <div class="summary-course-copy">
+                  <span id="summaryLevel" class="summary-course-level"></span>
+                  <strong id="summaryTitle"></strong>
+                  <p id="summaryCurriculum"></p>
+                  <div class="summary-schedule"><i class="fa-regular fa-calendar"></i><span id="summarySchedule"></span></div>
+                </div>
+              </div>
+
+              <div class="summary-course-select">
+                <label class="form-label" for="courseSelect">Change selected course</label>
+                <select id="courseSelect" class="form-select" aria-label="Change selected course"></select>
+              </div>
+
+              <div class="summary-price-list">
+                <div class="summary-price-row">
+                  <span>Monthly tuition</span>
+                  <strong id="summarySubtotal"></strong>
+                </div>
+                <div class="summary-price-row">
+                  <span>Registration fee</span>
+                  <strong>QAR 0</strong>
+                </div>
+                <div class="summary-price-row">
+                  <span>VAT</span>
+                  <strong>QAR 0</strong>
+                </div>
+              </div>
+
+              <div class="summary-total-row">
+                <div>
+                  <span>Total due today</span>
+                  <small>One month tuition</small>
+                </div>
+                <strong id="summaryTotal"></strong>
+              </div>
+
+              <button class="btn btn-primary-custom checkout-pay-btn w-100" type="submit">
+                <span>Complete Payment</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+
+              <div class="summary-assurance">
+                <span><i class="fa-solid fa-shield-halved"></i> Encrypted payment</span>
+                <span><i class="fa-solid fa-headset"></i> Parent support</span>
+              </div>
+            </div>
+
+            <div class="checkout-help-card">
+              <span class="checkout-help-icon"><i class="fa-brands fa-whatsapp"></i></span>
+              <div>
+                <strong>Need help before paying?</strong>
+                <p>Message our Doha admissions team.</p>
+                <a href="https://wa.me/97450001234?text=Hello%20DohaLearn%2C%20I%20need%20help%20with%20checkout." target="_blank" rel="noopener">Chat on WhatsApp <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <a class="navbar-brand text-white mb-3" href="index.html">
+          <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
+          <span>DohaLearn</span>
+        </a>
+        <p>Premium online tuition for students in Doha and across Qatar, aligned with IB, IGCSE/A-Levels, CBSE and Qatar National Curriculum.</p>
+        <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i>Doha, Qatar</p>
+        <p><i class="fa-brands fa-whatsapp me-2 text-warning"></i>+974 5000 1234</p>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="h6">Explore</h4>
+        <ul class="footer-links">
+          <li><a href="courses.html">All Courses</a></li>
+          <li><a href="course-details.html?course=igcse-maths">Course Details</a></li>
+          <li><a href="checkout.html">Checkout</a></li>
+          <li><a href="index.html#book-demo">Free Demo</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h4 class="h6">Curricula</h4>
+        <ul class="footer-links">
+          <li><a href="courses.html?curriculum=ib">IB Programme</a></li>
+          <li><a href="courses.html?curriculum=igcse">IGCSE & A-Level</a></li>
+          <li><a href="courses.html?curriculum=cbse">CBSE</a></li>
+          <li><a href="courses.html?curriculum=qatar">Qatar National</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h4 class="h6">Parent learning updates</h4>
+        <p>Receive revision advice, class openings and study resources.</p>
+        <form id="newsletterForm" class="needs-validation" novalidate>
+          <div class="input-group">
+            <input class="form-control" type="email" placeholder="Email address" aria-label="Email address" required>
+            <button class="btn btn-primary-custom" type="submit">Subscribe</button>
+          </div>
+          <div class="newsletter-message mt-2 small"></div>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
+      <span>© <span id="currentYear"></span> DohaLearn. All rights reserved.</span>
+      <span>Online tuition template · Doha, Qatar</span>
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-widget" href="https://wa.me/97450001234?text=Hello%20DohaLearn%2C%20I%20would%20like%20to%20ask%20about%20online%20tuition." target="_blank" rel="noopener" aria-label="Chat with DohaLearn on WhatsApp">
+  <span class="whatsapp-icon"><i class="fa-brands fa-whatsapp"></i></span>
+  <span class="whatsapp-label">WhatsApp us</span>
+</a>
+<button id="backToTop" class="back-to-top" type="button" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+$(function () {
+  const $form = $('#checkoutForm');
+  const $select = $('#courseSelect');
+  const cardSelector = '#cardNumber, #expiry, #cvv';
+
+  Object.values(DOHA_COURSES).forEach(function (course) {
+    $select.append(`<option value="${course.id}">${course.title} — ${DohaLearn.money(course.price)}</option>`);
+  });
+
+  const initialCourse = DohaLearn.selectedCourse();
+  $select.val(initialCourse.id);
+
+  function updateSummary() {
+    const course = DOHA_COURSES[$select.val()] || initialCourse;
+    $('#summaryImage').attr({ src: course.image, alt: course.title });
+    $('#summaryLevel').text(course.level);
+    $('#summaryTitle').text(course.title);
+    $('#summaryCurriculum').text(course.curricula);
+    $('#summarySchedule').text(course.schedule);
+    $('#summarySubtotal, #summaryTotal').text(DohaLearn.money(course.price));
+    history.replaceState(null, '', 'checkout.html?course=' + course.id);
+  }
+
+  function updatePaymentUI() {
+    const method = $('input[name="paymentMethod"]:checked').val();
+    const isCard = method === 'Credit / Debit Card';
+
+    $('.payment-choice').removeClass('active');
+    $('input[name="paymentMethod"]:checked').closest('.payment-choice').addClass('active');
+    $('#cardFields').toggleClass('d-none', !isCard);
+    $('#gatewayMessage').toggleClass('d-none', isCard);
+    $(cardSelector).prop('required', isCard);
+  }
+
+  $('.payment-choice').on('click change', function () {
+    $(this).find('input').prop('checked', true);
+    updatePaymentUI();
+  });
+
+  $('#cardNumber').on('input', function () {
+    const digits = this.value.replace(/\D/g, '').slice(0, 16);
+    this.value = digits.replace(/(.{4})/g, '$1 ').trim();
+  });
+
+  $('#expiry').on('input', function () {
+    let digits = this.value.replace(/\D/g, '').slice(0, 4);
+    if (digits.length > 2) digits = digits.slice(0, 2) + '/' + digits.slice(2);
+    this.value = digits;
+  });
+
+  $('#cvv, #parentPhone').on('input', function () {
+    this.value = this.value.replace(/\D/g, '');
+  });
+
+  $select.on('change', updateSummary);
+  updateSummary();
+  updatePaymentUI();
+
+  $form.on('submit', function (event) {
+    event.preventDefault();
+    const form = this;
+    const method = $('input[name="paymentMethod"]:checked').val();
+    const isCard = method === 'Credit / Debit Card';
+    $(cardSelector).prop('required', isCard);
+
+    if (!form.checkValidity()) {
+      event.stopPropagation();
+      $(form).addClass('was-validated');
+      const firstInvalid = form.querySelector(':invalid');
+      if (firstInvalid) {
+        firstInvalid.focus({ preventScroll: true });
+        firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      return;
+    }
+
+    const course = DOHA_COURSES[$select.val()];
+    const order = {
+      reference: 'DLQ-' + Date.now().toString().slice(-8),
+      courseId: course.id,
+      course: course.title,
+      price: course.price,
+      curriculum: course.curricula,
+      schedule: course.schedule,
+      student: $('#studentName').val().trim(),
+      grade: $('#studentGrade').val().trim(),
+      parent: $('#parentName').val().trim(),
+      phone: '+974 ' + $('#parentPhone').val().trim(),
+      email: $('#parentEmail').val().trim(),
+      paymentMethod: method,
+      date: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })
+    };
+
+    sessionStorage.setItem('dohaLearnOrder', JSON.stringify(order));
+    window.location.href = 'order-success.html?order=' + encodeURIComponent(order.reference);
+  });
+});
+</script>
+</body>
+</html>
