@@ -18,23 +18,24 @@
 
 <nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top site-navbar inner-nav" aria-label="Primary navigation">
   <div class="container">
-    <a class="navbar-brand" href="index.html" aria-label="DohaLearn home"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a>
+    <a class="navbar-brand" href="index.html" aria-label="DohaLearn home"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge Campus</span></a>
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav mx-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#demo-videos">Demo Classes</a></li>
-        <li class="nav-item"><a class="nav-link " href="checkout.html">Fees & Payment</a></li>
+        
         <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
       </ul>
       <div class="d-flex align-items-center gap-2"><span class="currency-badge"><i class="fa-solid fa-coins"></i> QAR</span><a href="index.html#book-demo" class="btn btn-primary-custom btn-sm">Book Free Demo</a></div>
     </div>
   </div>
 </nav>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
-  <div class="offcanvas-header"><a class="navbar-brand" href="index.html" id="mobileMenuLabel"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+  <div class="offcanvas-header"><a class="navbar-brand" href="index.html" id="mobileMenuLabel"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge Campus</span></a><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
   <div class="offcanvas-body d-flex flex-column">
     <nav class="mb-4">
       <a class="mobile-nav-link" href="index.html">Home <i class="fa-solid fa-arrow-right"></i></a>
@@ -57,7 +58,7 @@
 <footer class="site-footer">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-4"><a class="navbar-brand text-white mb-3" href="index.html"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a><p>Premium online tuition for students in Doha and across Qatar, aligned with IB, IGCSE/A-Levels, CBSE and Qatar National Curriculum.</p><p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i>Doha, Qatar</p><p><i class="fa-brands fa-whatsapp me-2 text-warning"></i>+974 5000 1234</p></div>
+      <div class="col-lg-4"><a class="navbar-brand text-white mb-3" href="index.html"><span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge Campus</span></a><p>Premium online tuition for students in Doha and across Qatar, aligned with IB, IGCSE/A-Levels, CBSE and Qatar National Curriculum.</p><p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i>Doha, Qatar</p><p><i class="fa-brands fa-whatsapp me-2 text-warning"></i>+974 5000 1234</p></div>
       <div class="col-6 col-lg-2"><h4 class="h6">Explore</h4><ul class="footer-links"><li><a href="courses.html">All Courses</a></li><li><a href="course-details.html?course=igcse-maths">Course Details</a></li><li><a href="checkout.html">Checkout</a></li><li><a href="index.html#book-demo">Free Demo</a></li></ul></div>
       <div class="col-6 col-lg-2"><h4 class="h6">Curricula</h4><ul class="footer-links"><li><a href="courses.html?curriculum=ib">IB Programme</a></li><li><a href="courses.html?curriculum=igcse">IGCSE & A-Level</a></li><li><a href="courses.html?curriculum=cbse">CBSE</a></li><li><a href="courses.html?curriculum=qatar">Qatar National</a></li></ul></div>
       <div class="col-lg-4"><h4 class="h6">Parent learning updates</h4><p>Receive revision advice, class openings and study resources.</p><form id="newsletterForm" class="needs-validation" novalidate><div class="input-group"><input class="form-control" type="email" placeholder="Email address" aria-label="Email address" required><button class="btn btn-primary-custom" type="submit">Subscribe</button></div><div class="newsletter-message mt-2 small"></div></form></div>
@@ -82,6 +83,57 @@ $(function(){
   $('.course-filter').on('click',function(){category=$(this).data('category');$('.course-filter').removeClass('active');$(this).addClass('active');apply()});$('#courseSearch').on('input',apply);$('#curriculumFilter,#sortCourses').on('change',apply);$('#resetFilters,#emptyReset').on('click',reset);
   const q=DohaLearn.getParam('curriculum');if(q){$('#curriculumFilter').val(q)}apply();
 });
+</script>
+<script>
+(function(){
+  "use strict";
+  const groupSelector=["main > section .container > .row","main > section .container-fluid > .row","main .checkout-content form > .row","main .checkout-hero-inner","main .trust-inner","main .cta-band"].join(",");
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let refreshQueued=false;
+  const revealObserver="IntersectionObserver" in window&&!reduceMotion?new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add("is-inview");
+      entry.target.addEventListener("transitionend",function(event){if(event.propertyName==="transform")entry.target.classList.add("scroll-finished")},{once:true});
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.14,rootMargin:"0px 0px -9% 0px"}):null;
+  function groupItems(group){
+    if(group.classList.contains("row"))return Array.from(group.children).filter(function(item){return/(^|\s)col(?:-|\s|$)/.test(item.className)});
+    return Array.from(group.children).filter(function(item){return!item.matches("script, style")});
+  }
+  function registerItem(item,direction,delay){
+    if(item.dataset.scrollJoinReady==="true")return;
+    item.dataset.scrollJoinReady="true";
+    item.removeAttribute("data-aos");item.removeAttribute("data-aos-delay");item.classList.remove("aos-init","aos-animate");
+    item.classList.add("scroll-join","scroll-from-"+direction);
+    item.style.setProperty("--scroll-delay",delay+"ms");
+    const rect=item.getBoundingClientRect();
+    const alreadyVisible=rect.top<window.innerHeight*.92&&rect.bottom>0;
+    if(!revealObserver||alreadyVisible)item.classList.add("is-inview","scroll-finished");else revealObserver.observe(item);
+  }
+  function prepareAnimations(){
+    const groups=Array.from(document.querySelectorAll(groupSelector));
+    groups.forEach(function(group,groupIndex){
+      const items=groupItems(group);const middle=Math.floor(items.length/2);
+      items.forEach(function(item,itemIndex){
+        let direction;
+        if(items.length===1)direction=groupIndex%2?"right":"left";
+        else if(items.length%2&&itemIndex===middle)direction="up";
+        else direction=itemIndex<items.length/2?"left":"right";
+        registerItem(item,direction,Math.min(itemIndex,items.length-1-itemIndex)*65);
+      });
+    });
+    if(window.AOS&&typeof window.AOS.refreshHard==="function")window.AOS.refreshHard();
+  }
+  function queueRefresh(){if(refreshQueued)return;refreshQueued=true;window.requestAnimationFrame(function(){refreshQueued=false;prepareAnimations()})}
+  function startScrollJoin(){
+    document.body.classList.add("scroll-motion-ready");prepareAnimations();
+    const pageMain=document.querySelector("main");
+    if(pageMain&&"MutationObserver"in window)new MutationObserver(queueRefresh).observe(pageMain,{childList:true,subtree:true});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){window.setTimeout(startScrollJoin,0)},{once:true});else window.setTimeout(startScrollJoin,0);
+}());
 </script>
 </body>
 </html>

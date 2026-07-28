@@ -21,7 +21,7 @@
   <div class="container">
     <a class="navbar-brand" href="index.html" aria-label="DohaLearn home">
       <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
-      <span>DohaLearn</span>
+      <span>Neural Bridge Campus</span>
     </a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu" aria-controls="mobileMenu" aria-label="Open navigation menu">
@@ -35,7 +35,8 @@
         <li class="nav-item"><a class="nav-link" href="index.html#demo-videos">Demo Classes</a></li>
         <li class="nav-item"><a class="nav-link active" href="checkout.html">Fees & Payment</a></li>
         <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
-        <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+        
+        <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
       </ul>
       <div class="d-flex align-items-center gap-2">
         <span class="currency-badge"><i class="fa-solid fa-coins"></i> QAR</span>
@@ -49,7 +50,7 @@
   <div class="offcanvas-header">
     <a class="navbar-brand" href="index.html" id="mobileMenuLabel">
       <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
-      <span>DohaLearn</span>
+      <span>Neural Bridge Campus</span>
     </a>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
@@ -377,7 +378,7 @@
       <div class="col-lg-4">
         <a class="navbar-brand text-white mb-3" href="index.html">
           <span class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span>
-          <span>DohaLearn</span>
+          <span>Neural Bridge Campus</span>
         </a>
         <p>Premium online tuition for students in Doha and across Qatar, aligned with IB, IGCSE/A-Levels, CBSE and Qatar National Curriculum.</p>
         <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i>Doha, Qatar</p>
@@ -528,6 +529,57 @@ $(function () {
     window.location.href = 'order-success.html?order=' + encodeURIComponent(order.reference);
   });
 });
+</script>
+<script>
+(function(){
+  "use strict";
+  const groupSelector=["main > section .container > .row","main > section .container-fluid > .row","main .checkout-content form > .row","main .checkout-hero-inner","main .trust-inner","main .cta-band"].join(",");
+  const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let refreshQueued=false;
+  const revealObserver="IntersectionObserver" in window&&!reduceMotion?new IntersectionObserver(function(entries,observer){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting)return;
+      entry.target.classList.add("is-inview");
+      entry.target.addEventListener("transitionend",function(event){if(event.propertyName==="transform")entry.target.classList.add("scroll-finished")},{once:true});
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.14,rootMargin:"0px 0px -9% 0px"}):null;
+  function groupItems(group){
+    if(group.classList.contains("row"))return Array.from(group.children).filter(function(item){return/(^|\s)col(?:-|\s|$)/.test(item.className)});
+    return Array.from(group.children).filter(function(item){return!item.matches("script, style")});
+  }
+  function registerItem(item,direction,delay){
+    if(item.dataset.scrollJoinReady==="true")return;
+    item.dataset.scrollJoinReady="true";
+    item.removeAttribute("data-aos");item.removeAttribute("data-aos-delay");item.classList.remove("aos-init","aos-animate");
+    item.classList.add("scroll-join","scroll-from-"+direction);
+    item.style.setProperty("--scroll-delay",delay+"ms");
+    const rect=item.getBoundingClientRect();
+    const alreadyVisible=rect.top<window.innerHeight*.92&&rect.bottom>0;
+    if(!revealObserver||alreadyVisible)item.classList.add("is-inview","scroll-finished");else revealObserver.observe(item);
+  }
+  function prepareAnimations(){
+    const groups=Array.from(document.querySelectorAll(groupSelector));
+    groups.forEach(function(group,groupIndex){
+      const items=groupItems(group);const middle=Math.floor(items.length/2);
+      items.forEach(function(item,itemIndex){
+        let direction;
+        if(items.length===1)direction=groupIndex%2?"right":"left";
+        else if(items.length%2&&itemIndex===middle)direction="up";
+        else direction=itemIndex<items.length/2?"left":"right";
+        registerItem(item,direction,Math.min(itemIndex,items.length-1-itemIndex)*65);
+      });
+    });
+    if(window.AOS&&typeof window.AOS.refreshHard==="function")window.AOS.refreshHard();
+  }
+  function queueRefresh(){if(refreshQueued)return;refreshQueued=true;window.requestAnimationFrame(function(){refreshQueued=false;prepareAnimations()})}
+  function startScrollJoin(){
+    document.body.classList.add("scroll-motion-ready");prepareAnimations();
+    const pageMain=document.querySelector("main");
+    if(pageMain&&"MutationObserver"in window)new MutationObserver(queueRefresh).observe(pageMain,{childList:true,subtree:true});
+  }
+  if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",function(){window.setTimeout(startScrollJoin,0)},{once:true});else window.setTimeout(startScrollJoin,0);
+}());
 </script>
 </body>
 </html>

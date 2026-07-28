@@ -1674,3 +1674,46 @@ img{max-width:100%;display:block}
     right:-85px;
   }
 }
+
+/* =========================================================
+   SCROLL JOIN REVEAL
+   Paired content enters from opposite sides and meets in its
+   natural centre position. Activated by the inline observer
+   in each page; existing component styles remain untouched.
+   ========================================================= */
+.scroll-motion-ready .scroll-join{
+  --scroll-x:0px;
+  --scroll-y:22px;
+  --scroll-delay:0ms;
+  opacity:0;
+  filter:blur(7px);
+  transform:translate3d(var(--scroll-x),var(--scroll-y),0) scale(.985);
+  transition:
+    opacity .72s cubic-bezier(.22,1,.36,1) var(--scroll-delay),
+    transform .9s cubic-bezier(.16,1,.3,1) var(--scroll-delay),
+    filter .72s ease var(--scroll-delay);
+  will-change:opacity,transform,filter;
+}
+.scroll-motion-ready .scroll-join.scroll-from-left{--scroll-x:-86px}
+.scroll-motion-ready .scroll-join.scroll-from-right{--scroll-x:86px}
+.scroll-motion-ready .scroll-join.scroll-from-up{--scroll-y:46px}
+.scroll-motion-ready .scroll-join.is-inview{
+  opacity:1;
+  filter:blur(0);
+  transform:translate3d(0,0,0) scale(1);
+}
+.scroll-motion-ready .scroll-join.scroll-finished{will-change:auto}
+
+@media (max-width:767.98px){
+  .scroll-motion-ready .scroll-join.scroll-from-left{--scroll-x:-38px}
+  .scroll-motion-ready .scroll-join.scroll-from-right{--scroll-x:38px}
+  .scroll-motion-ready .scroll-join.scroll-from-up{--scroll-y:30px}
+}
+@media (prefers-reduced-motion:reduce){
+  .scroll-motion-ready .scroll-join{
+    opacity:1!important;
+    filter:none!important;
+    transform:none!important;
+    transition:none!important;
+  }
+}

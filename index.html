@@ -23,7 +23,7 @@
   <nav id="siteNavbar" class="navbar navbar-expand-lg fixed-top site-navbar inner-nav" aria-label="Primary navigation">
     <div class="container">
       <a class="navbar-brand" href="index.html" aria-label="DohaLearn home"><span class="brand-mark"><i
-            class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a>
+            class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge Campus</span></a>
       <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
         aria-controls="mobileMenu" aria-label="Open navigation menu"><i class="fa-solid fa-bars"></i></button>
       <div class="collapse navbar-collapse">
@@ -31,9 +31,10 @@
           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link " href="courses.html">Courses</a></li>
           <li class="nav-item"><a class="nav-link" href="index.html#demo-videos">Demo Classes</a></li>
-          <li class="nav-item"><a class="nav-link " href="checkout.html">Fees & Payment</a></li>
+
           <li class="nav-item"><a class="nav-link" href="index.html#reviews">Reviews</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#faq">FAQ</a></li>
+
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
         <div class="d-flex align-items-center gap-2"><span class="currency-badge"><i class="fa-solid fa-coins"></i>
             QAR</span><a href="index.html#book-demo" class="btn btn-primary-custom btn-sm">Book Free Demo</a></div>
@@ -42,8 +43,9 @@
   </nav>
   <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
     <div class="offcanvas-header"><a class="navbar-brand" href="index.html" id="mobileMenuLabel"><span
-          class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a><button
-        type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></div>
+          class="brand-mark"><i class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge
+          Campus</span></a><button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+        aria-label="Close"></button></div>
     <div class="offcanvas-body d-flex flex-column">
       <nav class="mb-4">
         <a class="mobile-nav-link" href="index.html">Home <i class="fa-solid fa-arrow-right"></i></a>
@@ -276,24 +278,19 @@
           <div class="col-lg-7">
             <form id="demoForm" class="form-card needs-validation" novalidate>
               <div class="row g-3">
-                <div class="col-md-6"><label class="form-label" for="parentName">Parent / student name</label><input
-                    id="parentName" class="form-control" required></div>
+                <div class="col-md-6"><label class="form-label" for="parentName">Full name</label><input id="parentName"
+                    class="form-control" required></div>
+                <div class="col-md-6"><label class="form-label" for="parentName">Email address</label><input id="parentName"
+                    class="form-control" required></div>
                 <div class="col-md-6"><label class="form-label" for="demoPhone">WhatsApp number</label>
                   <div class="input-group"><span class="input-group-text">+974</span><input id="demoPhone"
                       class="form-control" inputmode="numeric" pattern="[0-9]{8}" placeholder="5000 1234" required>
                   </div>
                 </div>
-                <div class="col-md-6"><label class="form-label" for="demoCurriculum">Curriculum</label><select
-                    id="demoCurriculum" class="form-select" required>
-                    <option value="">Choose curriculum</option>
-                    <option>IB</option>
-                    <option>IGCSE / A-Level</option>
-                    <option>CBSE</option>
-                    <option>Qatar National Curriculum</option>
-                  </select></div>
+               
                 <div class="col-md-6"><label class="form-label" for="demoSubject">Subject</label><input id="demoSubject"
                     class="form-control" placeholder="e.g. Mathematics" required></div>
-                <div class="col-12"><label class="form-label" for="demoMessage">Learning need</label><textarea
+                <div class="col-12"><label class="form-label" for="demoMessage">Message</label><textarea
                     id="demoMessage" class="form-control" rows="4"
                     placeholder="Grade, current challenge and preferred schedule"></textarea></div>
                 <div class="col-12"><button class="btn btn-primary-custom w-100" type="submit">Request Free Demo <i
@@ -363,7 +360,7 @@
     <div class="container">
       <div class="row g-4">
         <div class="col-lg-4"><a class="navbar-brand text-white mb-3" href="index.html"><span class="brand-mark"><i
-                class="fa-solid fa-graduation-cap"></i></span><span>DohaLearn</span></a>
+                class="fa-solid fa-graduation-cap"></i></span><span>Neural Bridge Campus</span></a>
           <p>Premium online tuition for students in Doha and across Qatar, aligned with IB, IGCSE/A-Levels, CBSE and
             Qatar National Curriculum.</p>
           <p class="mb-1"><i class="fa-solid fa-location-dot me-2 text-warning"></i>Doha, Qatar</p>
@@ -421,6 +418,115 @@
       $("#videoModal").on("show.bs.modal", function (e) { const trigger = $(e.relatedTarget); $("#videoFrame").attr("src", trigger.data("video")); }).on("hidden.bs.modal", function () { $("#videoFrame").attr("src", ""); });
       $("#demoForm").on("submit", function (e) { e.preventDefault(); if (!this.checkValidity()) { e.stopPropagation(); $(this).addClass("was-validated"); return; } $("#demoMessageResult").removeClass("text-danger").addClass("text-success").text("Request received. The Doha team will contact you through WhatsApp."); this.reset(); $(this).removeClass("was-validated"); });
     });
+  </script>
+  <script>
+    (function () {
+      "use strict";
+
+      const groupSelector = [
+        "main > section .container > .row",
+        "main > section .container-fluid > .row",
+        "main .checkout-content form > .row",
+        "main .checkout-hero-inner",
+        "main .trust-inner",
+        "main .cta-band"
+      ].join(",");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let refreshQueued = false;
+
+      const revealObserver = "IntersectionObserver" in window && !reduceMotion
+        ? new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-inview");
+            entry.target.addEventListener("transitionend", function (event) {
+              if (event.propertyName === "transform") {
+                entry.target.classList.add("scroll-finished");
+              }
+            }, { once: true });
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: .14, rootMargin: "0px 0px -9% 0px" })
+        : null;
+
+      function groupItems(group) {
+        if (group.classList.contains("row")) {
+          return Array.from(group.children).filter(function (item) {
+            return /(^|\s)col(?:-|\s|$)/.test(item.className);
+          });
+        }
+        return Array.from(group.children).filter(function (item) {
+          return !item.matches("script, style");
+        });
+      }
+
+      function registerItem(item, direction, delay) {
+        if (item.dataset.scrollJoinReady === "true") return;
+        item.dataset.scrollJoinReady = "true";
+        item.removeAttribute("data-aos");
+        item.removeAttribute("data-aos-delay");
+        item.classList.remove("aos-init", "aos-animate");
+        item.classList.add("scroll-join", "scroll-from-" + direction);
+        item.style.setProperty("--scroll-delay", delay + "ms");
+
+        const rect = item.getBoundingClientRect();
+        const alreadyVisible = rect.top < window.innerHeight * .92 && rect.bottom > 0;
+        if (!revealObserver || alreadyVisible) {
+          item.classList.add("is-inview", "scroll-finished");
+        } else {
+          revealObserver.observe(item);
+        }
+      }
+
+      function prepareAnimations() {
+        const groups = Array.from(document.querySelectorAll(groupSelector));
+        groups.forEach(function (group, groupIndex) {
+          const items = groupItems(group);
+          const middle = Math.floor(items.length / 2);
+          items.forEach(function (item, itemIndex) {
+            let direction;
+            if (items.length === 1) {
+              direction = groupIndex % 2 ? "right" : "left";
+            } else if (items.length % 2 && itemIndex === middle) {
+              direction = "up";
+            } else {
+              direction = itemIndex < items.length / 2 ? "left" : "right";
+            }
+            const delay = Math.min(itemIndex, items.length - 1 - itemIndex) * 65;
+            registerItem(item, direction, delay);
+          });
+        });
+        if (window.AOS && typeof window.AOS.refreshHard === "function") {
+          window.AOS.refreshHard();
+        }
+      }
+
+      function queueRefresh() {
+        if (refreshQueued) return;
+        refreshQueued = true;
+        window.requestAnimationFrame(function () {
+          refreshQueued = false;
+          prepareAnimations();
+        });
+      }
+
+      function startScrollJoin() {
+        document.body.classList.add("scroll-motion-ready");
+        prepareAnimations();
+        const pageMain = document.querySelector("main");
+        if (pageMain && "MutationObserver" in window) {
+          new MutationObserver(queueRefresh).observe(pageMain, { childList: true, subtree: true });
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
+          window.setTimeout(startScrollJoin, 0);
+        }, { once: true });
+      } else {
+        window.setTimeout(startScrollJoin, 0);
+      }
+    }());
   </script>
 </body>
 
